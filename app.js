@@ -186,14 +186,21 @@ function openMenuDetail(menuKey) {
   modal.classList.remove('hidden');
   document.body.style.overflow = 'hidden';
   modalContent.focus();
+
+  // Hilangkan WA & Back to Top saat modal muncul
+  if(whatsappBtn) whatsappBtn.style.display = 'none';
+  if(backToTop) backToTop.style.display = 'none';
 }
 
-// Fungsi tutup modal
 function closeMenuDetail() {
   const modal = document.getElementById('menuModal');
   modal?.classList.add('hidden');
   document.body.style.overflow='auto';
   document.getElementById('modalContent').innerHTML = '';
+
+  // Tampilkan WA & Back to Top kembali
+  if(whatsappBtn) whatsappBtn.style.display = 'flex'; // atau 'block' tergantung styling aslinya
+  if(backToTop) backToTop.style.display = 'flex';
 }
 
 // Tutup modal saat klik di luar konten
@@ -239,6 +246,8 @@ function orderWhatsApp(menuName){
   });
 
   backToTop?.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+
 
 
 

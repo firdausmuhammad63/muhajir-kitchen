@@ -107,6 +107,7 @@
     .line-clamp-2 {
       display: -webkit-box;
       -webkit-line-clamp: 2;
+      line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
@@ -202,28 +203,28 @@
   <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero text-white text-center px-4 sm:px-6 lg:px-8">
     <!-- Background Slider -->
     <div aria-hidden="true" class="absolute inset-0">
-      <div class="slider w-full h-full relative">
-        <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100"
-          style="background-image: url('https://static.promediateknologi.id/crop/0x765:1080x1582/750x500/webp/photo/p1/36/2025/07/17/Screenshot_2025-07-17-17-16-32-134_comgoogleandroidappsmaps-351288658.jpg');"></div>
-        <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
-          style="background-image: url('https://img.inews.co.id/media/822/files/inews_new/2020/08/28/resep_nasi_kebuli_daging_sapi.jpg');"></div>
-        <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
-          style="background-image: url('https://cdn-image.hipwee.com/wp-content/uploads/2020/08/hipwee-1d5bcd2e-b5f3-4a75-a085-8f4afdea2d5b.jpeg');"></div>
-        <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
-          style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2hQ9XENAUgudNresgz1myvdJw7zq4aW-MoWO5KZHC8bpsQGR9z29QoaliBWb3Ssvh287kH3n1ang3KsFbMKzEHkVO87pb667j0GXHcLrF0RwkZDTg2GtxdwZPZL7o6V9HRaZoUHh265W_SnLCv945b-zNdBoanh8qIUroELz48u0Huzv20fYYWtRB/s1280/maxresdefault%20(1).jpg');"></div>
-      </div>
-
-      <!-- Overlay -->
+        <div class="slider w-full h-full relative">
+          <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100"
+            style="background-image: url('https://static.promediateknologi.id/crop/0x765:1080x1582/750x500/webp/photo/p1/36/2025/07/17/Screenshot_2025-07-17-17-16-32-134_comgoogleandroidappsmaps-351288658.jpg');"></div>
+          <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+            style="background-image: url('https://img.inews.co.id/media/822/files/inews_new/2020/08/28/resep_nasi_kebuli_daging_sapi.jpg');"></div>
+          <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+            style="background-image: url('https://cdn-image.hipwee.com/wp-content/uploads/2020/08/hipwee-1d5bcd2e-b5f3-4a75-a085-8f4afdea2d5b.jpeg');"></div>
+          <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+            style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2hQ9XENAUgudNresgz1myvdJw7zq4aW-MoWO5KZHC8bpsQGR9z29QoaliBWb3Ssvh287kH3n1ang3KsFbMKzEHkVO87pb667j0GXHcLrF0RwkZDTg2GtxdwZPZL7o6V9HRaZoUHh265W_SnLCv945b-zNdBoanh8qIUroELz48u0Huzv20fYYWtRB/s1280/maxresdefault%20(1).jpg');"></div>
+        </div>
       <div class="absolute inset-0 bg-black/50"></div>
     </div>
 
-    <!-- DateTime -->
-    <div id="datetime" class="absolute top-6 right-6 bg-white/20 backdrop-blur-md text-white text-sm font-semibold px-5 py-2 rounded-full shadow-md border border-white/30">
-      ...
-    </div>
+    <!-- Content Wrapper -->
+    <div class="relative z-10 max-w-4xl flex flex-col items-center">
+      <!-- DateTime -->
+      <div id="datetime" 
+          class="mb-4 bg-white/20 backdrop-blur-md text-white text-sm font-semibold px-5 py-2 rounded-full shadow-md border border-white/30 z-20">
+        ...
+      </div>
 
-    <!-- Content -->
-    <div class="relative z-10 max-w-4xl">
+      <!-- Title & Subtitle -->
       <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
         Rasakan Kelezatan<br />
         <span class="text-yellow-300">Nasi Kebuli Premium</span>
@@ -231,12 +232,12 @@
       <p class="text-md md:text-2xl px-4 mb-8 max-w-3xl mx-auto leading-relaxed text-amber-100">
         Nikmati cita rasa autentik nasi kebuli dengan bumbu rempah pilihan dan daging berkualitas premium
       </p>
-      <button onclick="scrollToSection('menu')" class="btn-primary text-white px-4 py-3 rounded-full text-lg font-semibold inline-flex items-center space-x-2 bg-yellow-600 hover:bg-yellow-700 transition">
-        <svg class="w-9 h-9" fill="currentColor" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-          <path d="M120 0C53.73 0 0 53.73 0 120s53.73 120 120 120 120-53.73 120-120S186.27 0 120 0zm56.66 80.52l-18.3 86.3c-1.37 6.57-4.95 8.2-10.04 5.1l-27.75-20.48-13.38 12.88c-1.48 1.48-2.71 2.71-5.55 2.71l2-27.83 50.63-45.77c2.2-1.99-.48-3.1-3.43-1.11l-62.6 39.37-26.91-8.41c-5.83-1.82-5.94-5.83 1.23-8.6l105.64-40.68c4.86-1.84 9.1 1.16 7.57 8.63z"/>
-        </svg>
-        <span>Pesan Sekarang</span>
-      </button>
+        <button onclick="scrollToSection('menu')" class="btn-primary text-white px-4 py-3 rounded-full text-lg font-semibold inline-flex items-center space-x-2 bg-yellow-600 hover:bg-yellow-700 transition">
+          <svg class="w-9 h-9" fill="currentColor" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path d="M120 0C53.73 0 0 53.73 0 120s53.73 120 120 120 120-53.73 120-120S186.27 0 120 0zm56.66 80.52l-18.3 86.3c-1.37 6.57-4.95 8.2-10.04 5.1l-27.75-20.48-13.38 12.88c-1.48 1.48-2.71 2.71-5.55 2.71l2-27.83 50.63-45.77c2.2-1.99-.48-3.1-3.43-1.11l-62.6 39.37-26.91-8.41c-5.83-1.82-5.94-5.83 1.23-8.6l105.64-40.68c4.86-1.84 9.1 1.16 7.57 8.63z"/>
+          </svg>
+          <span>Pesan Sekarang</span>
+        </button>
     </div>
   </section>
 
@@ -340,7 +341,6 @@
                 <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.402 8.176L12 18.896l-7.336 3.855 1.402-8.176L.132 9.21l8.2-1.192z" />
               </svg>
             </div>
-            <div id="menu-spesial" class="p-4 bg-white rounded-lg shadow-md">
               <h3 class="font-serif text-xl font-bold text-amber-800 mb-2">Nasi Kebuli Spesial</h3>
               <p class="text-amber-700 text-sm mb-3 line-clamp-2">
                 Kombinasi ayam & kambing dengan telur rebus dan acar
@@ -606,7 +606,7 @@
                 <div>
                   <h3 class="font-semibold text-amber-800 text-lg mb-1">Alamat</h3>
                   <address class="text-amber-700 not-italic">
-                    Jl. Raya Kebuli No. 123<br />Kebayoran Baru, Jakarta Selatan
+                    Jl. Tambun Rengas No. 49, Rorotan, <br />Cilincing, Jakarta Utara
                   </address>
                 </div>
               </div>
@@ -685,8 +685,7 @@
       Pesan Sekarang
     </h2>
     <p class="text-1xl mb-10 text-amber-100 font-sans leading-relaxed tracking-wide max-w-xl mx-auto">
-      Rasakan kelezatan <span class="font-semibold">nasi kebuli premium</span>.<br> Kami siap melayani pesanan Anda dengan <span class="italic">fast respon</span>.
-      <br><i>Buka setiap hari</i> 
+      Rasakan kelezatan <span class="font-semibold">nasi kebuli premium</span>.<br> Kami melayani pesanan Anda dengan <span class="italic">fast respon</span>.
     </p>
     <!-- Tombol WhatsApp -->
     <button
@@ -862,7 +861,7 @@
   </footer>
 
   <!-- Menu Detail Modal -->
-  <div id="menuModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+  <div id="menuModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
     <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-lg">
       <div class="relative">
         <button onclick="closeMenuDetail()" aria-label="Tutup detail menu" class="absolute top-4 right-4 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-amber-600">
