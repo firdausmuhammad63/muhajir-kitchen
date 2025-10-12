@@ -812,6 +812,10 @@ video {
   top: -1.75rem;
 }
 
+.top-16 {
+  top: 4rem;
+}
+
 .z-0 {
   z-index: 0;
 }
