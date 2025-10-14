@@ -78,84 +78,80 @@
   // ================================
   // MENU DETAILS & MODAL
   // ================================
-  const menuDetails = {
-    ayam: {
-      name: 'Nasi Kebuli Ayam Premium',
-      price: 'Rp 35.000',
-      image: 'https://static.promediateknologi.id/crop/0x765:1080x1582/750x500/webp/photo/p1/36/2025/07/17/Screenshot_2025-07-17-17-16-32-134_comgoogleandroidappsmaps-351288658.jpg',
-      description: 'Nasi kebuli dengan ayam kampung empuk dan rempah tradisional yang meresap.',
-      ingredients: ['Nasi basmati premium','Ayam kampung segar','Rempah tradisional','Kismis & almond'],
-      features: ['✅ Halal & higienis','✅ Porsi mengenyangkan','✅ Siap cepat']
-    },
-    kambing: {
-      name: 'Nasi Kebuli Kambing Premium',
-      price: 'Rp 45.000',
-      image: 'https://img.inews.co.id/media/822/files/inews_new/2020/08/28/resep_nasi_kebuli_daging_sapi.jpg',
-      description: 'Nasi kebuli dengan daging kambing muda empuk dan rempah khas Timur Tengah.',
-      ingredients: ['Nasi basmati premium','Daging kambing muda','Rempah kebuli pilihan','Kacang almond & pistachio'],
-      features: ['✅ Daging kambing empuk tanpa prengus','✅ Rempah premium','✅ Slow cooking & higienis']
-    },
-    spesial: {
-      name: 'Nasi Kebuli Spesial Premium',
-      price: 'Rp 55.000',
-      image: 'https://cdn-image.hipwee.com/wp-content/uploads/2020/08/hipwee-1d5bcd2e-b5f3-4a75-a085-8f4afdea2d5b.jpeg',
-      description: 'Nasi kebuli dengan ayam kampung & kambing muda, dilengkapi telur rebus, acar, dan kerupuk udang.',
-      ingredients: ['Nasi basmati double portion','Ayam kampung + Daging kambing','Telur rebus','Acar & kerupuk udang'],
-      features: ['✅ Kombinasi protein lengkap','✅ Porsi jumbo','✅ Cocok untuk acara spesial']
-    },
-    seafood: {
-      name: 'Nasi Kebuli Seafood Premium',
-      price: 'Rp 65.000',
-      image: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2hQ9XENAUgudNresgz1myvdJw7zq4aW-MoWO5KZHC8bpsQGR9z29QoaliBWb3Ssvh287kH3n1ang3KsFbMKzEHkVO87pb667j0GXHcLrF0RwkZDTg2GtxdwZPZL7o6V9HRaZoUHh265W_SnLCv945b-zNdBoanh8qIUroELz48u0Huzv20fYYWtRB/s1280/maxresdefault%20(1).jpg',
-      description: 'Nasi kebuli tradisional berpadu seafood segar, udang jumbo & cumi dengan rempah premium.',
-      ingredients: ['Nasi basmati saffron','Udang jumbo','Cumi-cumi','Rempah kebuli premium'],
-      features: ['✅ Seafood segar','✅ Kaya protein','✅ Fusion modern']
-    }
-  };
-            function openMenuDetail(menuKey) {
-              const item = menuDetails[menuKey];
-              if (!item) return;
+const menuDetails = {
+  ayam: {
+    name: 'Nasi Kebuli Ayam Premium',
+    price: 'Rp 35.000',
+    image: 'https://static.promediateknologi.id/crop/0x765:1080x1582/750x500/webp/photo/p1/36/2025/07/17/Screenshot_2025-07-17-17-16-32-134_comgoogleandroidappsmaps-351288658.jpg',
+    description: 'Nasi kebuli dengan ayam kampung empuk dan rempah tradisional yang meresap.',
+    ingredients: ['Nasi basmati premium','Ayam kampung segar','Rempah tradisional','Kismis & almond'],
+    features: ['✅ Halal & higienis','✅ Porsi mengenyangkan','✅ Siap cepat']
+  },
+  kambing: {
+    name: 'Nasi Kebuli Kambing Premium',
+    price: 'Rp 45.000',
+    image: 'https://img.inews.co.id/media/822/files/inews_new/2020/08/28/resep_nasi_kebuli_daging_sapi.jpg',
+    description: 'Nasi kebuli dengan daging kambing muda empuk dan rempah khas Timur Tengah.',
+    ingredients: ['Nasi basmati premium','Daging kambing muda','Rempah kebuli pilihan','Kacang almond & pistachio'],
+    features: ['✅ Daging kambing empuk tanpa prengus','✅ Rempah premium','✅ Slow cooking & higienis']
+  },
+  spesial: {
+    name: 'Nasi Kebuli Spesial Premium',
+    price: 'Rp 55.000',
+    image: 'https://cdn-image.hipwee.com/wp-content/uploads/2020/08/hipwee-1d5bcd2e-b5f3-4a75-a085-8f4afdea2d5b.jpeg',
+    description: 'Nasi kebuli dengan ayam kampung & kambing muda, dilengkapi telur rebus, acar, dan kerupuk udang.',
+    ingredients: ['Nasi basmati double portion','Ayam kampung + Daging kambing','Telur rebus','Acar & kerupuk udang'],
+    features: ['✅ Kombinasi protein lengkap','✅ Porsi jumbo','✅ Cocok untuk acara spesial']
+  },
+  seafood: {
+    name: 'Nasi Kebuli Seafood Premium',
+    price: 'Rp 65.000',
+    image: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2hQ9XENAUgudNresgz1myvdJw7zq4aW-MoWO5KZHC8bpsQGR9z29QoaliBWb3Ssvh287kH3n1ang3KsFbMKzEHkVO87pb667j0GXHcLrF0RwkZDTg2GtxdwZPZL7o6V9HRaZoUHh265W_SnLCv945b-zNdBoanh8qIUroELz48u0Huzv20fYYWtRB/s1280/maxresdefault%20(1).jpg',
+    description: 'Nasi kebuli tradisional berpadu seafood segar, udang jumbo & cumi dengan rempah premium.',
+    ingredients: ['Nasi basmati saffron','Udang jumbo','Cumi-cumi','Rempah kebuli premium'],
+    features: ['✅ Seafood segar','✅ Kaya protein','✅ Fusion modern']
+  }
+};
+function openMenuDetail(menuKey) {
+  const item = menuDetails[menuKey];
+  if (!item) return;
 
-              const modal = document.getElementById('menuModal');
-              const modalContent = document.getElementById('modalContent');
+  const modal = document.getElementById('menuModal');
+  const modalContent = document.getElementById('modalContent');
 
-                  modalContent.innerHTML = `
-                    <div class="relative">
-                      <img src="${item.image}" alt="${item.name}" class="w-full h-64 object-cover" onerror="this.style.display='none'">
-                      <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
-                        <h2 class="font-serif text-3xl font-bold text-white mb-2">${item.name}</h2>
-                        <div class="flex items-center space-x-4">
-                          <span class="text-2xl font-bold text-yellow-300">${item.price}</span>
-                          <div class="flex text-yellow-400">⭐⭐⭐⭐⭐</div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div class="p-6">
-                      <div class="mb-6">
-                        <h3 class="font-serif text-xl font-bold text-amber-800 mb-3">Deskripsi</h3>
-                        <p class="text-amber-700 leading-relaxed">${item.description}</p>
-                      </div>
-                      
-                      <div class="grid md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                          <h3 class="font-serif text-xl font-bold text-amber-800 mb-3">Komposisi Premium</h3>
-                          <ul class="space-y-2">
-                            ${item.ingredients.map(ingredient => `
-                              <li class="flex items-start space-x-2 text-amber-700">
-                                <span class="text-amber-600 mt-1">•</span>
-                                <span>${ingredient}</span>
-                              </li>`).join('')}
-                          </ul>
-                        </div>
-                      
-                      <div>
-                        <h3 class="font-serif text-xl font-bold text-amber-800 mb-3">Keunggulan</h3>
-                        <ul class="space-y-2">
-                          ${item.features.map(feature => `<li class="text-amber-700">${feature}</li>`).join('')}
-                        </ul>
-                      </div>
-                    </div>
+  modalContent.innerHTML = `
+    <div class="relative">
+      <img src="${item.image}" alt="${item.name}" class="w-full h-64 object-cover" onerror="this.style.display='none'">
+      <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+      </div>
+    </div>
+    
+    <div class="p-6">
+      <div class="mb-6">
+        <h3 class="font-serif text-xl font-bold text-amber-800 mb-3">Deskripsi</h3>
+        <p class="text-amber-700 leading-relaxed">${item.description}</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div>
+          <h3 class="font-serif text-xl font-bold text-amber-800 mb-3">Komposisi Premium</h3>
+          <ul class="space-y-2">
+            ${item.ingredients.map(ingredient => `
+              <li class="flex items-start space-x-2 text-amber-700">
+                <span class="text-amber-600 mt-1">•</span>
+                <span>${ingredient}</span>
+              </li>`).join('')}
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="font-serif text-xl font-bold text-amber-800 mb-3">Keunggulan</h3>
+          <ul class="space-y-2">
+            ${item.features.map(feature => `<li class="text-amber-700">${feature}</li>`).join('')}
+          </ul>
+        </div>
+      </div>
+
                     
                     <div class="bg-amber-50 rounded-xl p-4 mb-6">
                         <div class="flex items-center space-x-2 mb-2">
@@ -213,11 +209,9 @@ document.querySelectorAll('[data-menu]').forEach(btn=>{
 });
 
 // Fungsi WA
-function orderWhatsApp(menuKey) {
-  const menu = menuDetails[menuKey];
-  if (!menu) { console.error('Menu tidak ditemukan:', menuKey); return; }
-  const waNumber = '62895413263355';
-  const text = encodeURIComponent(`Assalamu'alaikum, saya ingin memesan: ${menu.name}`);
+function orderWhatsApp(menuName){
+  const waNumber = '62895413263355'; // ganti nomor WA-mu
+  const text = encodeURIComponent(`Assalamu'alaikum, saya ingin memesan Nasi Kebuli: ${menuName}`);
   window.open(`https://wa.me/${waNumber}?text=${text}`, '_blank');
 }
 
