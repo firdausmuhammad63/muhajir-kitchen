@@ -1,37 +1,52 @@
+// ================================
+// MOBILE MENU TOGGLE
+// ================================
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const hamburgerLine1 = document.getElementById('hamburger-line-1');
+const hamburgerLine2 = document.getElementById('hamburger-line-2');
+const hamburgerLine3 = document.getElementById('hamburger-line-3');
 
-  // ================================
-  // MOBILE MENU TOGGLE
-  // ================================
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const hamburgerLine1 = document.getElementById('hamburger-line-1');
-  const hamburgerLine2 = document.getElementById('hamburger-line-2');
-  const hamburgerLine3 = document.getElementById('hamburger-line-3');
-  let isMenuOpen = false;
+let isMenuOpen = false;
 
-  const toggleMobileMenu = () => {
-    isMenuOpen = !isMenuOpen;
-    if(isMenuOpen){
-      mobileMenu.classList.remove('max-h-0','opacity-0');
-      mobileMenu.classList.add('max-h-96','opacity-100');
-      hamburgerLine1.classList.add('rotate-45','translate-y-2');
-      hamburgerLine2.classList.add('opacity-0');
-      hamburgerLine3.classList.add('-rotate-45','-translate-y-2');
-      mobileMenuBtn.setAttribute('aria-expanded','true');
-    } else {
-      mobileMenu.classList.remove('max-h-96','opacity-100');
-      mobileMenu.classList.add('max-h-0','opacity-0');
-      hamburgerLine1.classList.remove('rotate-45','translate-y-2');
-      hamburgerLine2.classList.remove('opacity-0');
-      hamburgerLine3.classList.remove('-rotate-45','-translate-y-2');
-      mobileMenuBtn.setAttribute('aria-expanded','false');
-    }
-  };
+const toggleMobileMenu = () => {
+  isMenuOpen = !isMenuOpen;
 
-  mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-  document.addEventListener('click', (e) => {
-    if(isMenuOpen && !mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) toggleMobileMenu();
-  });
+  // Toggle menu expand
+  if (isMenuOpen) {
+    mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+    mobileMenu.classList.remove('opacity-0');
+    mobileMenu.classList.add('opacity-100');
+  } else {
+    mobileMenu.style.maxHeight = "0px";
+    mobileMenu.classList.remove('opacity-100');
+    mobileMenu.classList.add('opacity-0');
+  }
+
+  // Hamburger animation
+  hamburgerLine1.classList.toggle('rotate-45', isMenuOpen);
+  hamburgerLine1.classList.toggle('translate-y-2', isMenuOpen);
+  hamburgerLine2.classList.toggle('opacity-0', isMenuOpen);
+  hamburgerLine3.classList.toggle('-rotate-45', isMenuOpen);
+  hamburgerLine3.classList.toggle('-translate-y-2', isMenuOpen);
+
+  mobileMenuBtn.setAttribute('aria-expanded', isMenuOpen);
+};
+
+// Event
+mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+// Klik di luar untuk menutup
+document.addEventListener('click', (e) => {
+  if (
+    isMenuOpen &&
+    !mobileMenuBtn.contains(e.target) &&
+    !mobileMenu.contains(e.target)
+  ) {
+    toggleMobileMenu();
+  }
+});
+
 
   // ================================
   // SMOOTH SCROLL WITH OFFSET
