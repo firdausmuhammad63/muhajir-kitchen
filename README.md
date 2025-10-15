@@ -1,18 +1,21 @@
-# 🍛 Firdaus Nasi Kebuli
+# 🍩 Queen of Njajan
 
-Landing page modern dan simple untuk brand **Firdaus Nasi Kebuli** — menampilkan cita rasa khas Timur Tengah dengan tampilan elegan dan cepat diakses di berbagai perangkat.
+Landing page modern dan elegan untuk brand **Queen of Njajan** — menghadirkan donat lembut, manis, dan menggoda dalam kemasan yang estetik, ringan diakses, dan ramah di semua perangkat.
+
+---
 
 ## 🚀 Deskripsi
 
-Website ini dirancang untuk memperkenalkan **Firdaus Nasi Kebuli** secara profesional kepada pelanggan potensial.  
-Menggunakan **Tailwind CSS** untuk tampilan yang bersih dan modern, serta **JavaScript** untuk interaksi ringan dan dinamis.
+Website ini dirancang untuk memperkenalkan **Queen of Njajan** secara profesional kepada pelanggan dan calon reseller.  
+Menggunakan **Tailwind CSS** untuk tampilan yang bersih dan modern, serta **JavaScript** untuk animasi dan interaksi ringan yang membuat pengalaman pengguna lebih hidup.
 
-Fitur utama:
-- Tampilan **modern dan responsif** di semua perangkat (desktop & mobile).
-- **Navigasi halus (smooth scroll)** antar bagian.
-- **Animasi ringan** untuk memperindah tampilan tanpa mengganggu performa.
-- **Integrasi WhatsApp Button** untuk pemesanan cepat.
-- **Section Hero, Menu, Testimoni, dan Kontak** yang terstruktur dengan baik.
+### ✨ Fitur utama
+- Tampilan **modern, clean, dan responsif** di semua perangkat.  
+- **Hero slider** dengan gambar donat menggugah selera.  
+- **Katalog produk** lengkap dengan harga, deskripsi, dan tombol **pesan via WhatsApp**.  
+- **Animasi lembut & smooth scroll** antar bagian.  
+- **FAQ & lokasi toko (Google Maps)** agar pelanggan mudah menemukanmu.  
+- **Tombol WhatsApp mengambang (floating)** untuk pemesanan cepat.
 
 ---
 
@@ -20,45 +23,57 @@ Fitur utama:
 
 | Teknologi | Deskripsi |
 |------------|------------|
-| **HTML5** | Struktur halaman web |
-| **Tailwind CSS** | Styling modern dan efisien |
-| **JavaScript (Vanilla)** | Interaktivitas dan efek animasi ringan |
-| **Font Awesome / Lucide Icons** | Ikon elegan dan ringan |
-| **Google Fonts (Inter / Poppins)** | Tipografi modern dan mudah dibaca |
-
----
-Fitur Desain
-Hero Section: Foto nasi kebuli khas + CTA button (“Pesan Sekarang”)
-Menu Favorit: Daftar varian nasi kebuli dengan gambar dan harga
-Testimoni: Ulasan pelanggan untuk membangun kepercayaan
-Kontak: Tombol WhatsApp dan lokasi Google Maps
-
-📱 Responsif dan SEO-Friendly
-Dibangun dengan pendekatan Mobile First
-Optimasi kecepatan dan struktur heading untuk SEO dasar
-Metadata, favicon, dan Open Graph tag sudah disiapkan
-
-🧑‍🍳 Tentang Firdaus Nasi Kebuli
-Firdaus Nasi Kebuli adalah brand kuliner yang menghadirkan cita rasa khas Timur Tengah dengan sentuhan rempah lokal.
-Kami percaya bahwa kelezatan sejati lahir dari ketulusan dalam memasak dan kehangatan dalam berbagi.
-
-📞 Kontak
-📍 Alamat: Jl. [Nama Jalan], [Kota]
-📱 WhatsApp: [Nomor WA aktif]
-🌐 Website: https://firdausnasikebuli.com
-
-🧾 Lisensi
-Proyek ini dibuat untuk keperluan promosi dan portofolio.
-Hak cipta © 2025 Firdaus Nasi Kebuli. Semua hak dilindungi.
-
-💡 Catatan Tambahan
-Desain dibuat modern, simple, dan clean, cocok untuk usaha kuliner yang ingin tampil profesional namun tetap hangat dan bersahabat.
+| **HTML5** | Struktur halaman website |
+| **Tailwind CSS** | Styling cepat, bersih, dan modern |
+| **JavaScript (Vanilla)** | Efek animasi & interaksi dinamis |
+| **Font Awesome / Lucide Icons** | Ikon ringan & elegan |
+| **Google Fonts (Poppins / Inter)** | Tipografi lembut dan ramah mata |
 
 ---
 
-Apakah kamu ingin saya bantu tambahkan **contoh section HTML + Tailwind** untuk bagian “Hero” dan “Menu Favorit”-nya biar langsung bisa kamu pakai di proyek landing page-nya?
+## 🎨 Fitur Desain
 
+- **Hero Section:** Slider foto donat (strawberry, blueberry, keju, cokelat, dan original) dengan teks promosi dan tombol *"Pesan Sekarang"*.  
+- **Katalog Produk:** 5 varian donat dengan nama, harga, dan tombol WhatsApp untuk pemesanan instan.  
+- **Tentang Kami:** Kisah singkat tentang Queen of Njajan dan komitmen pada kualitas rasa.  
+- **Testimoni Pelanggan:** Ulasan pelanggan untuk membangun kepercayaan.  
+- **FAQ & Kontak:** Tanya jawab umum serta tombol lokasi toko.  
+- **Footer Simpel:** Informasi hak cipta & kontak cepat.
 
+---
 
+## 📱 Responsif & SEO-Friendly
 
+- Desain **mobile-first**, tampil sempurna di smartphone & desktop.  
+- Optimasi **kecepatan, struktur heading, dan meta SEO**.  
+- Sudah termasuk **favicon** dan **Open Graph tag** agar tampil cantik saat dibagikan di media sosial.
 
+---
+
+## 👑 Tentang Queen of Njajan
+
+**Queen of Njajan** hadir dari kecintaan terhadap camilan manis yang menggembirakan.  
+Kami membuat donat dengan bahan premium, tekstur lembut, dan rasa yang bikin ketagihan.  
+Setiap gigitan adalah bentuk cinta — karena kebahagiaan bisa dimulai dari donat yang sempurna. 🍩💖
+
+---
+
+## 📞 Kontak
+
+📍 **Alamat:** Jl. [Nama Jalan], [Kota]  
+📱 **WhatsApp:** [Nomor WA aktif]  
+🌐 **Website:** [https://queenofnjajan.com](https://queenofnjajan.com)
+
+---
+
+## 🧾 Lisensi
+
+Proyek ini dibuat untuk keperluan **promosi dan portofolio pribadi**.  
+Hak cipta © 2025 **Queen of Njajan**. Seluruh hak dilindungi.
+
+---
+
+## 💡 Catatan Tambahan
+
+Desain dibuat **modern, simple, dan lembut**, cocok untuk bisnis kuliner yang ingin tampil profesional, feminin, dan menggugah selera.  
+Setiap detail warna dan animasi dirancang untuk menonjolkan kelezatan produk dan kenyamanan pelanggan.
