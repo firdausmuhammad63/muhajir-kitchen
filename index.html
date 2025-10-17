@@ -255,60 +255,36 @@
 </head>
 <body class="bg-gradient-to-br from-orange-50 to-amber-50">
 
-<!-- 🔄 Preloader -->
+<!-- 🔄 Preloader Modern -->
 <div id="preloader" 
-     class="fixed top-0 left-0 w-full h-screen flex flex-col items-center justify-center bg-white z-[99999]">
+     class="fixed top-0 left-0 w-full h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-900 z-[99999] transition-opacity duration-700 ease-in-out">
   
-  <!-- Animasi donat berputar -->
+  <!-- Animasi donat berputar lebih modern -->
   <div class="relative w-16 h-16 mb-5">
-    <div class="absolute inset-0 border-4 border-yellow-400 border-t-transparent rounded-full animate-spin"></div>
+    <div class="absolute inset-0 border-4 border-yellow-400 dark:border-yellow-300 border-t-transparent rounded-full animate-spin"></div>
     <div class="absolute inset-3 bg-pink-300 rounded-full"></div>
     <div class="absolute inset-6 bg-white rounded-full"></div>
   </div>
   
-  <!-- Teks preloader -->
-  <p class="text-amber-500 font-semibold tracking-wide text-lg animate-pulse text-center">
-    Memuat Firdaus Donuts...
+  <!-- Teks preloader dengan font lebih modern -->
+  <p class="text-amber-500 font-bold tracking-wide text-2xl animate-pulse text-center">
+    Firdaus Donuts
   </p>
 </div>
 
-<!-- Tambahkan CSS -->
-<style>
-  /* Transisi keluar lembut */
-  #preloader.fade-out {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.8s ease, visibility 0.8s ease;
-  }
-
-  /* Sembunyikan scroll & konten sebelum preloader hilang */
-  body.loading {
-    overflow: hidden;
-  }
-</style>
-
-<!-- Tambahkan JS -->
 <script>
-  // Saat mulai load, tambahkan class 'loading'
-  document.body.classList.add("loading");
-
   window.addEventListener("load", () => {
     const preloader = document.getElementById("preloader");
-
-    // Pasang delay sebelum menghilangkan preloader 2.5 detik
-    const minLoadingTime = 2500;
+    const minLoadingTime = 1500; // Mengurangi waktu loading minimum
     const startTime = performance.now();
 
+    // Pastikan preloader disembunyikan setelah waktu minimal
     const hidePreloader = () => {
       const elapsed = performance.now() - startTime;
-      const remaining = Math.max(0, minDuration - elapsed);
+      const remaining = Math.max(0, minLoadingTime - elapsed);
 
       setTimeout(() => {
-        preloader.classList.add("fade-out");
-        // Kembalikan scroll setelah animasi selesai
-        setTimeout(() => {
-          document.body.classList.remove("loading");
-        }, 800);
+        preloader.classList.add("opacity-0", "pointer-events-none");
       }, remaining);
     };
 
