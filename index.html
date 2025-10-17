@@ -33,12 +33,19 @@
         html {
             scroll-behavior: smooth;
         }
-        
+
         /* Animation Classes */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.6s ease-out;
+        }
+
+        /* Animasi fade-out (PRELOADER) */
+        .fade-out {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
         }
         
         .fade-in.visible {
@@ -254,6 +261,21 @@
 <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
 <body class="bg-gradient-to-br from-orange-50 to-amber-50">
+
+    <!-- 🔄 Preloader -->
+    <div id="preloader" class="fixed inset-0 flex flex-col items-center justify-center bg-white z-[9999]">
+    <!-- Animasi donat berputar -->
+    <div class="relative w-16 h-16 mb-5">
+        <div class="absolute inset-0 border-4 border-yellow-400 border-t-transparent rounded-full animate-spin"></div>
+        <div class="absolute inset-3 bg-pink-300 rounded-full"></div>
+        <div class="absolute inset-6 bg-white rounded-full"></div>
+    </div>
+    
+    <!-- Teks preloader -->
+    <p class="text-gray-700 font-semibold tracking-wide text-lg animate-pulse">
+        Menunggu Firdaus Donuts...
+    </p>
+    </div>
 
   <!-- Navbar -->
   <nav class="navbar fixed top-0 left-0 right-0 z-50 bg-transparent py-4 px-4 md:px-8 transition-all duration-300">
@@ -897,6 +919,15 @@
                 document.body.style.opacity = '1';
             }, 100);
         });
+
+        // Saat semua elemen halaman sudah termuat
+        window.addEventListener("load", function () {
+            const preloader = document.getElementById("preloader");
+            setTimeout(() => {
+            preloader.classList.add("fade-out");
+            }, 600); // biar tidak langsung hilang mendadak
+        });
+
     </script>
 
 </body>
