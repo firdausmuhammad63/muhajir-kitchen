@@ -17,6 +17,47 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+         /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #eaa466 0%, #6a478d 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+        
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255,255,255,0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        .loader-text {
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 20px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
         * {
             font-family: 'Poppins', 'Nunito', sans-serif;
         }
@@ -226,7 +267,6 @@
             transition: all 0.3s ease;
         }
         
-        
         .navbar.scrolled {
             background: rgba(196, 127, 7, 0.95);
             backdrop-filter: blur(20px);
@@ -250,101 +290,105 @@
         ::-webkit-scrollbar-thumb:hover {
             background: var(--primary-brown);
         }
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
     </style>
 <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
 <body class="bg-gradient-to-br from-orange-50 to-amber-50">
 
-<!-- 🔄 Preloader Modern dan Aksesibel -->
-<div id="preloader" 
-     class="fixed top-0 left-0 w-full h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-900 z-[99999] transition-opacity duration-700 ease-in-out"
-     role="status"
-     aria-live="polite"
-     aria-label="Memuat konten...">
-  
-  <!-- Animasi donat berputar lebih modern -->
-  <div class="relative w-16 h-16 mb-5">
-    <div class="absolute inset-0 border-4 border-yellow-400 dark:border-yellow-300 border-t-transparent rounded-full animate-spin"></div>
-    <div class="absolute inset-3 bg-pink-300 rounded-full"></div>
-    <div class="absolute inset-6 bg-white rounded-full"></div>
-  </div>
-  
-  <!-- Teks preloader dengan font lebih modern -->
-  <p class="text-amber-500 font-bold tracking-wide text-2xl animate-pulse text-center">
-    Memuat Firdaus Donuts...
-  </p>
-</div>
-
-<script>
-  window.addEventListener("load", () => {
-    const preloader = document.getElementById("preloader");
-    const minLoadingTime = 1500; // Durasi loading minimum yang diharapkan (ms)
-    const startTime = performance.now();
-    
-    // Fungsi untuk menyembunyikan preloader dengan aman
-    const hidePreloader = () => {
-      const elapsed = performance.now() - startTime;
-      const remaining = Math.max(0, minLoadingTime - elapsed);
-
-      setTimeout(() => {
-        // Hapus elemen preloader dari DOM setelah transisi selesai
-        preloader.classList.add("opacity-0", "pointer-events-none");
-        preloader.addEventListener('transitionend', () => {
-          preloader.remove();
-        });
-      }, remaining);
-    };
-
-    // Panggil fungsi untuk menyembunyikan preloader
-    hidePreloader();
-  });
-</script>
-
-  <!-- Navbar -->
-  <nav class="navbar fixed top-0 left-0 right-0 z-50 bg-transparent py-4 px-4 md:px-8 transition-all duration-300">
+    <!-- 🔄 Preloader Modern dan Aksesibel -->
+        <div id="preloader">
+            <div class="text-center">
+                <div class="loader"></div>
+                <div class="loader-text">Memuat Firdaus Donuts...</div>
+            </div>
+        </div>
+        
+    <!-- Navbar -->
+    <nav class="navbar fixed top-0 left-0 right-0 z-50 bg-transparent py-4 px-4 md:px-8 transition-all duration-300">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
-      
-      <!-- Brand -->
-      <div class="flex items-center space-x-3">
+        
+        <!-- Brand -->
+        <div class="flex items-center space-x-3">
         <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-md">
-          <span class="text-amber-600 text-2xl font-bold">F</span>
+            <span class="text-amber-600 text-2xl font-bold">F</span>
         </div>
         <div>
-          <h1 class="text-xl font-bold text-amber-300">Firdaus Donuts</h1>
-          <p class="text-sm text-amber-300">Donuts Premium</p>
+            <h1 class="text-xl font-bold text-amber-300">Firdaus Donuts</h1>
+            <p class="text-sm text-amber-300">Donuts Premium</p>
         </div>
-      </div>
+        </div>
 
-      <!-- Desktop Menu -->
-      <div class="hidden md:flex items-center space-x-8">
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
         <a href="#home" class="nav-link text-white hover:text-amber-300 transition-colors">Beranda</a>
         <a href="#products" class="nav-link text-white hover:text-amber-300 transition-colors">Produk</a>
         <a href="#services" class="nav-link text-white hover:text-amber-300 transition-colors">Layanan</a>
         <a href="#faq" class="nav-link text-white hover:text-amber-300 transition-colors">FAQ</a>
-        <!-- <a href="#location" class="nav-link text-white hover:text-amber-300 transition-colors">Lokasi</a> -->
         <a href="#order" class="nav-link text-white hover:text-amber-300 transition-colors">Pesan</a>
-      </div>
+        </div>
 
-      <!-- Hamburger (Mobile Only) -->
-      <button id="hamburger" class="hamburger md:hidden flex flex-col items-center space-y-1.5 z-50">
+        <!-- Hamburger (Mobile Only) -->
+        <button id="hamburger" class="hamburger md:hidden flex flex-col items-center space-y-1.5 z-[100]">
         <span class="line w-7 h-1 bg-amber-300 rounded-full transition-all duration-300"></span>
         <span class="line w-7 h-1 bg-amber-300 rounded-full transition-all duration-300"></span>
         <span class="line w-7 h-1 bg-amber-300 rounded-full transition-all duration-300"></span>
-      </button>
+        </button>
     </div>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu hidden md:hidden absolute top-full left-0 right-0 bg-white shadow-lg">
-      <div class="flex flex-col py-4">
+    <div id="mobileMenu"
+        class="absolute top-full left-0 right-0 bg-white shadow-lg transform scale-y-0 opacity-0 origin-top transition-all duration-300 md:hidden pointer-events-none">
+        <div class="flex flex-col py-4">
         <a href="#home" class="mobile-nav-link px-6 py-3 text-amber-800 hover:bg-amber-50 transition-colors">Beranda</a>
         <a href="#products" class="mobile-nav-link px-6 py-3 text-amber-800 hover:bg-amber-50 transition-colors">Produk</a>
         <a href="#services" class="mobile-nav-link px-6 py-3 text-amber-800 hover:bg-amber-50 transition-colors">Layanan</a>
         <a href="#faq" class="mobile-nav-link px-6 py-3 text-amber-800 hover:bg-amber-50 transition-colors">FAQ</a>
-        <!-- <a href="#location" class="mobile-nav-link px-6 py-3 text-amber-800 hover:bg-amber-50 transition-colors">Lokasi</a> -->
         <a href="#order" class="mobile-nav-link px-6 py-3 text-amber-800 hover:bg-amber-50 transition-colors">Pesan</a>
-      </div>
+        </div>
     </div>
-  </nav>
+    </nav>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const hamburgerBtn = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+    if (hamburgerBtn && mobileMenu) {
+        function toggleMenu() {
+        const isOpen = mobileMenu.classList.contains('scale-y-100');
+
+        if (isOpen) {
+            // Tutup menu
+            mobileMenu.classList.remove('scale-y-100', 'opacity-100');
+            mobileMenu.classList.add('scale-y-0', 'opacity-0', 'pointer-events-none');
+            hamburgerBtn.classList.remove('active');
+        } else {
+            // Buka menu
+            mobileMenu.classList.remove('scale-y-0', 'opacity-0', 'pointer-events-none');
+            mobileMenu.classList.add('scale-y-100', 'opacity-100');
+            hamburgerBtn.classList.add('active');
+        }
+        }
+
+        // Klik hamburger
+        hamburgerBtn.addEventListener('click', toggleMenu);
+
+        // Klik link = tutup menu
+        navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('scale-y-100', 'opacity-100');
+            mobileMenu.classList.add('scale-y-0', 'opacity-0', 'pointer-events-none');
+            hamburgerBtn.classList.remove('active');
+        });
+        });
+    }
+    });
+    </script>
 
     <!-- Hero Section -->
     <section id="home" class="hero-slider relative">
@@ -679,7 +723,7 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Kontak Kami</h4>
                     <div class="space-y-2 text-amber-200">
-                        <p><i class="fas fa-map-marker-alt mr-2"></i>Jl. Binawarga No.132, DKI Jakarta</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Jl. Binawarga No. 132, Jakarta</p>
                         <p><i class="fas fa-phone mr-2"></i>0895-4132-63355</p>
                         <p><i class="fas fa-clock mr-2"></i>Setiap hari: 08:00 - 20:00</p>
                     </div>
@@ -725,103 +769,90 @@
         </button>
 
     <script>
-        // Navbar Scroll Effect
-        window.addEventListener("scroll", function() {
-            const navbar = document.querySelector(".navbar");
-            const title = document.querySelector(".navbar h1");      // Brand title
-            const subtitle = document.querySelector(".navbar p");    // Brand subtitle
-            const lines = document.querySelectorAll(".hamburger .line");
-
-            if (window.scrollY > 50) {
-                navbar.classList.add("scrolled");
-
-                // Ubah teks navbar menjadi putih
-                title.classList.remove("text-amber-300");
-                title.classList.add("text-white");
-
-                subtitle.classList.remove("text-amber-300");
-                subtitle.classList.add("text-white");
-
-                // Ubah hamburger menjadi putih
-                lines.forEach(line => {
-                    line.classList.remove("bg-amber-300");
-                    line.classList.add("bg-white");
-                });
-            } else {
-                navbar.classList.remove("scrolled");
-
-                // Kembalikan warna teks awal
-                title.classList.remove("text-white");
-                title.classList.add("text-amber-300");
-
-                subtitle.classList.remove("text-white");
-                subtitle.classList.add("text-amber-300");
-
-                // Kembalikan hamburger warna awal
-                lines.forEach(line => {
-                    line.classList.remove("bg-white");
-                    line.classList.add("bg-amber-300");
+        document.addEventListener('DOMContentLoaded', () => {
+            /* ------------------------------
+            🌟 AOS (Animate On Scroll)
+            ------------------------------ */
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-in-out',
+                    once: true,
+                    offset: 50,
+                    disable: () => window.innerWidth < 768 // Disable AOS di layar kecil
                 });
             }
-        });
 
-        // Back to Top Function
-        const whatsappBtn = document.getElementById('whatsappBtn');
-        const backToTop = document.getElementById('backToTop');
+            /* ------------------------------
+            ⏳ Preloader
+            ------------------------------ */
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        preloader.style.transition = 'opacity 0.5s ease';
+                        preloader.style.opacity = '0';
+                        setTimeout(() => preloader.style.display = 'none', 500);
+                    }, 1000); // waktu tampil preloader 1 detik
+                });
+            }
 
-        window.addEventListener('scroll',()=>{
-            const y=window.scrollY;
-            if(whatsappBtn) whatsappBtn.style.right = y>500?'20px':'24px';
-            if(backToTop) backToTop.style.opacity = y>300?'1':'0';
-        });
+            /* ------------------------------
+            🧭 Navbar Scroll Effect
+            ------------------------------ */
+            const navbar = document.querySelector('.navbar');
+            const title = navbar?.querySelector('h1');
+            const subtitle = navbar?.querySelector('p');
+            const lines = document.querySelectorAll('.hamburger .line');
 
-        backToTop?.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+            window.addEventListener('scroll', () => {
+                if (!navbar) return; // kalau navbar gak ada, hentikan
 
-        // Mobile Menu Toggle
-        const hamburgerBtn = document.getElementById('hamburger');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        
-        hamburgerBtn.addEventListener('click', function() {
-            hamburgerBtn.classList.toggle('active');
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Close mobile menu when link is clicked
-        document.querySelectorAll('.mobile-nav-link').forEach(link => {
-            link.addEventListener('click', function() {
-                hamburgerBtn.classList.remove('active');
-                mobileMenu.classList.add('hidden');
+                const scrolled = window.scrollY > 50;
+
+                navbar.classList.toggle('scrolled', scrolled);
+
+                if (title) {
+                    title.classList.toggle('text-white', scrolled);
+                    title.classList.toggle('text-amber-300', !scrolled);
+                }
+                if (subtitle) {
+                    subtitle.classList.toggle('text-white', scrolled);
+                    subtitle.classList.toggle('text-amber-300', !scrolled);
+                }
+                lines.forEach(line => {
+                    line.classList.toggle('bg-white', scrolled);
+                    line.classList.toggle('bg-amber-300', !scrolled);
+                });
             });
         });
-        
-        // Hero Slider
+
+        // Hero Slider tanpa indikator
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
-        const indicators = document.querySelectorAll('.indicator');
-        
+
         function showSlide(index) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            indicators.forEach(indicator => indicator.classList.remove('active'));
-            
-            slides[index].classList.add('active');
-            indicators[index].classList.add('active');
+            if (slides.length === 0) return;
+
+            slides.forEach(slide => {
+                slide.classList.remove('active', 'opacity-100', 'z-10');
+                slide.classList.add('opacity-0', 'z-0');
+            });
+
+            slides[index].classList.add('active', 'opacity-100', 'z-10');
+            slides[index].classList.remove('opacity-0', 'z-0');
         }
-        
+
         function nextSlide() {
             currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
         }
-        
-        // Auto slide every 5 seconds
+
+        // Tampilkan slide pertama langsung
+        showSlide(currentSlide);
+
+        // Auto-slide tiap 5 detik
         setInterval(nextSlide, 5000);
-        
-        // Manual slide control
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', function() {
-                currentSlide = index;
-                showSlide(currentSlide);
-            });
-        });
         
         // FAQ Accordion
         document.querySelectorAll('.accordion-header').forEach(header => {
@@ -934,6 +965,17 @@
             });
         });
         
+        // Back to Top Function
+        const whatsappBtn = document.getElementById('whatsappBtn');
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll',()=>{
+            const y=window.scrollY;
+            if(whatsappBtn) whatsappBtn.style.right = y>500?'20px':'24px';
+            if(backToTop) backToTop.style.opacity = y>300?'1':'0';
+        });
+
+        backToTop?.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
         // Add loading animation
         window.addEventListener('load', function() {
             document.body.style.opacity = '0';
@@ -943,6 +985,5 @@
             }, 100);
         });
     </script>
-
 </body>
 </html>
