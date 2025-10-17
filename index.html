@@ -255,9 +255,12 @@
 </head>
 <body class="bg-gradient-to-br from-orange-50 to-amber-50">
 
-<!-- 🔄 Preloader Modern -->
+<!-- 🔄 Preloader Modern dan Aksesibel -->
 <div id="preloader" 
-     class="fixed top-0 left-0 w-full h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-900 z-[99999] transition-opacity duration-700 ease-in-out">
+     class="fixed top-0 left-0 w-full h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-900 z-[99999] transition-opacity duration-700 ease-in-out"
+     role="status"
+     aria-live="polite"
+     aria-label="Memuat konten...">
   
   <!-- Animasi donat berputar lebih modern -->
   <div class="relative w-16 h-16 mb-5">
@@ -268,26 +271,31 @@
   
   <!-- Teks preloader dengan font lebih modern -->
   <p class="text-amber-500 font-bold tracking-wide text-2xl animate-pulse text-center">
-    Firdaus Donuts
+    Memuat Firdaus Donuts...
   </p>
 </div>
 
 <script>
   window.addEventListener("load", () => {
     const preloader = document.getElementById("preloader");
-    const minLoadingTime = 1500; // Mengurangi waktu loading minimum
+    const minLoadingTime = 1500; // Durasi loading minimum yang diharapkan (ms)
     const startTime = performance.now();
-
-    // Pastikan preloader disembunyikan setelah waktu minimal
+    
+    // Fungsi untuk menyembunyikan preloader dengan aman
     const hidePreloader = () => {
       const elapsed = performance.now() - startTime;
       const remaining = Math.max(0, minLoadingTime - elapsed);
 
       setTimeout(() => {
+        // Hapus elemen preloader dari DOM setelah transisi selesai
         preloader.classList.add("opacity-0", "pointer-events-none");
+        preloader.addEventListener('transitionend', () => {
+          preloader.remove();
+        });
       }, remaining);
     };
 
+    // Panggil fungsi untuk menyembunyikan preloader
     hidePreloader();
   });
 </script>
